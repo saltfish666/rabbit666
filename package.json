@@ -1,0 +1,29 @@
+{
+    "name": "rabbit",
+    "version": "0.1.0",
+    "description": "tiny nodejs web server",
+    "main": "index.js",
+    "pre-commit": [
+        "fix",
+        "lint"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/saltfish666/rabbit.git"
+    },
+    "keywords": [
+        "webserver"
+    ],
+    "author": "saltfish666",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/saltfish666/rabbit/issues"
+    },
+    "homepage": "https://github.com/saltfish666/rabbit",
+    "devDependencies": {
+        "babel-eslint": "^7.2.3",
+        "eslint": "^4.19.1",
+        "pre-commit": "^1.2.2"
+    },
+    "dependencies": {}
+}
