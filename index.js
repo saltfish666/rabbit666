@@ -14,28 +14,42 @@ class rabbit {
     getCallbackFun(){
         let that =this;
         return function (req,res) {
+            console.log(req,res)
 
             that.afterReqArrayFuns.forEach(fun => {         // 不同的req中间件可能冲突，不方便维护扩展啊，难道只能不断测试？
                 fun(req)
             });
 
-            /*
-            匹配路由
-            提取url中数据
-            执行响应函数
-            */
-            for(let router of that.routerArr){
-                if(router.method.toLocaleLowerCase() == req.method.toLocaleLowerCase() 
-                                    && router.pathReg.test(req.url.split("?")[0])){
-                    router.callback(req,res)
-                    break
+            function excRouter(){
+                for(let router of that.routerArr){
+                    if(router.method.toLocaleLowerCase() == req.method.toLocaleLowerCase() 
+                                        && router.pathReg.test(req.url.split("?")[0])){
+                        router.callback(req,res)
+                        break
+                    }
                 }
             }
 
-            that.beforeResArrayFuns.forEach(fun => {         // 不同的req中间件可能冲突，不方便维护扩展啊，难道只能不断测试？
-                fun(req)
-            });
-            that.NotExistUrl(req,res)
+            if(req.method.toLocaleLowerCase() == "get"){
+                excRouter()
+                that.beforeResArrayFuns.forEach(fun => {        
+                    fun(req)
+                })
+                that.NotExistUrl(req,res)
+            }
+            
+            /*get请求会忽略这一段*/
+            req.on("data",function(dataBuf){
+                console.log("ondata")
+                req.data = dataBuf.toString("utf8")
+                console.log(req,res)
+                excRouter()
+                that.beforeResArrayFuns.forEach(fun => {         
+                    fun(req)
+                })
+                that.NotExistUrl(req,res)
+            })
+            
         }
     }
 
@@ -63,7 +77,7 @@ class rabbit {
         try{
             res.end("Not Exist Url")
         }catch(e){
-            break
+
         }
     }
 }

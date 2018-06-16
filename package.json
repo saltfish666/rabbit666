@@ -1,6 +1,6 @@
 {
     "name": "rabbit666",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "tiny nodejs web server",
     "main": "index.js",
     "pre-commit": [
@@ -9,7 +9,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/saltfish666/rabbit.git"
+        "url": "git+https://github.com/saltfish666/rabbit666.git"
     },
     "keywords": [
         "webserver"
@@ -17,9 +17,9 @@
     "author": "saltfish666",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/saltfish666/rabbit/issues"
+        "url": "https://github.com/saltfish666/rabbit666/issues"
     },
-    "homepage": "https://github.com/saltfish666/rabbit",
+    "homepage": "https://github.com/saltfish666/rabbit666",
     "devDependencies": {
         "babel-eslint": "^7.2.3",
         "eslint": "^4.19.1",
