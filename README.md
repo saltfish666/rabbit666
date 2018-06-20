@@ -1,5 +1,7 @@
 # rabbit666
-http server frame
+> http server frame
+
+[![NPM](https://nodei.co/npm/rabbit666.png)](https://npmjs.org/package/rabbit666)
 
 ### install
 ```
