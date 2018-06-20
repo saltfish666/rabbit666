@@ -1,21 +1,13 @@
 module.exports = {
-  "extends": ["eslint:recommended"],
-  "rules": {
-    "no-console": ["error", {
-      "allow": ["warn", "error", "info"]
-    }],
-    "indent": ["error", 4],
+  root: true,
+  parserOptions: {
+    parser: 'babel-eslint'
   },
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "script"
+  env: {
+    node: true,
   },
-  "globals": {
-  },
-  "env": {
-    "node": true,
-    "es6": true,
-    "mocha": true
-  }
-};
+  extends: [
+    // https://github.com/standard/standard/blob/master/docs/RULES-en.md
+    'standard'
+  ]
+}
