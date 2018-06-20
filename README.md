@@ -1,5 +1,7 @@
 # rabbit666
-http server frame
+> http server frame
+
+[![npm version](https://badge.fury.io/js/rabbit666.svg)](https://badge.fury.io/js/rabbit666)
 
 ### install
 ```
