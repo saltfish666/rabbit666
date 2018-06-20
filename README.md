@@ -1,7 +1,7 @@
 # rabbit666
 > http server frame
 
-[![npm version](https://badge.fury.io/js/rabbit666.svg)](https://badge.fury.io/js/rabbit666)
+[![NPM](https://nodei.co/npm/rabbit666.png)](https://npmjs.org/package/rabbit666)
 
 ### install
 ```
